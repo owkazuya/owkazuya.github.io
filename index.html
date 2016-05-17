@@ -1,10 +1,22 @@
 <html>
 <head>
 <meta charset="utf-8">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <title></title>
+<script type="text/javascript">
+function addPtag(){
+  console.log('onclick');
+  $.ajax({
+    url: '/ajax.html',
+    success: function(result) {
+      $('#ajax-contents').append(result);
+    }
+  });
+}
+</script>
 </head>
 <body>
-新規
-aaa
+  <div id="ajax-contents"></div>
+  <button type="button" onclick="addPtag()">add ptag</button>
 </body>
 </html>
